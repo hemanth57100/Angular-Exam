@@ -1,0 +1,26 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div>
+        <label for="firstName">FirstName:</label>
+        <input type="text" id="firstName" formControlName="firstName">
+        <div *ngIf="firstNameInvalid" class="error-msg">First Name is required</div>
+    </div>
+    <div>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName">
+        <div *ngIf="lastNameInvalid" class="error-msg">Last name is required</div>
+    </div>
+    <div>
+        <label for="lastName">Email</label>
+        <input type="text" id="email" formControlName="email">
+        <div *ngIf="emailInvalid" class="error-msg">email is required</div>
+    </div>
+    <div>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" formControlName="phone">
+        <div *ngIf="phoneInvalid" class="error-msg">Phone number is required</div>
+    </div>
+    <div>
+        <button type="submit" [disabled]="myForm.invalid">submit</button>
+        <div>Form Status:{{myForm.status}}</div>
+    </div>
+</form>

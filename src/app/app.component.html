@@ -1,0 +1,45 @@
+<h1>1</h1>
+<div class="grid-container">
+  <div class="grid-row">
+    <app-component1 class="grid-item"></app-component1>
+    <app-component2 class="grid-item"></app-component2>
+  </div>
+  <div class="grid-row">
+    <app-component3 class="grid-item"></app-component3>
+    <app-component4 class="grid-item"></app-component4>
+  </div>
+</div>
+<br><br>
+<h1>2</h1>
+<app-child [childInput]="parentValue" (sendValue)="getValueFromChild($event)"></app-child>
+<p>{{Names}}</p>
+<br><br>
+<h1>3</h1>
+<input type="text" id="font-size" name="font-size" placeholder="Enter the font size" #fontsize>
+<button (click)=sendFontSize(fontsize.value)>submit</button>
+<app-child-font [size]="size"></app-child-font>
+<br><br>
+<h1>4</h1>
+<h1>Before passing in pipe {{College}}</h1>
+<h1>After passing in pipe {{College|adj1}}</h1>
+<br><br>
+<h1>5</h1>
+<app-my-form (formSubmitted)="handleFormSubmission($event)"></app-my-form>
+<br><br>
+<h1>6</h1>
+<h1><a routerLink="/home">Home</a> </h1>
+<h1><a routerLink="/contact">Contact</a> </h1>
+<h1><a routerLink="/about">About-us</a> </h1>
+<router-outlet></router-outlet>
+<br><br>
+<h1>7</h1>
+<app-number-list></app-number-list>
+<br><br>
+<h1>8</h1>
+<app-user></app-user>
+<br><br>
+<h1>9</h1>
+<app-data></app-data>
+<br><br>
+<h1>10</h1>
+<button (click)="addObject()">Add object</button>

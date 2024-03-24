@@ -1,0 +1,14 @@
+<button (click)="fetchUser()">Retrive user</button>
+<div *ngIf="userData">
+    <form (submit)="onSubmit($event)" style="border: 5px solid black;">
+        <label for="fullName">Name:</label>
+        <input type="text" id="fullName" [value]="userData.name.title + ' ' + userData.name.first + ' ' + userData.name.last" disabled style="margin-bottom: 10px;"><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" [value]="userData.email" disabled style="margin-bottom: 10px"><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" [value]="userData.phone" disabled><br>
+        <label for="userPhoto">Photo:</label><br>
+        <img [src]="userData.picture.large"><br>
+        <button type="submit">submit</button>
+    </form>
+</div>
